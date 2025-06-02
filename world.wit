@@ -1,0 +1,15 @@
+package nve:wasm-component;
+
+interface host {
+  log: func(message: string);
+}
+
+interface guest {
+  name: func() -> string;
+  process: func(a: s32, b: s32) -> s32;
+}
+
+world wasm-component {
+  import host;
+  export guest;
+}

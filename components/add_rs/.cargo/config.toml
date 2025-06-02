@@ -1,0 +1,8 @@
+[build]
+target = "wasm32-wasip2"
+
+[unstable]
+build-std = ["std", "panic_abort"]
+
+[target.wasm32-wasip2]
+runner = "wasmtime run --wasm-features component-model"

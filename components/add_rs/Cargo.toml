@@ -1,0 +1,15 @@
+[package]
+name = "add_rs"
+version = "0.1.0"
+edition = "2024"
+authors = ["Nico"]
+
+[dependencies]
+wit-bindgen = { version = "0.42.1", default-features = false, features = ["macros"] }
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+opt-level = 's'
+lto = true
