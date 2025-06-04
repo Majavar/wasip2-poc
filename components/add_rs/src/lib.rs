@@ -2,7 +2,7 @@ wit_bindgen::generate!({ path: "../.." });
 
 struct Adder;
 
-impl exports::nve::wasm_component::guest::Guest for Adder {
+impl Guest for Adder {
     fn name() -> String {
         "add".to_string()
     }

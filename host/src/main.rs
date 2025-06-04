@@ -100,7 +100,6 @@ async fn main() -> Result<()> {
 
     // Get the component name
     let name = instance
-        .nve_wasm_component_guest()
         .call_name(&mut store)
         .await?;
     info!(component_name = %name, "Retrieved component name");
@@ -109,7 +108,6 @@ async fn main() -> Result<()> {
     let a = 7;
     let b = 35;
     let result = instance
-        .nve_wasm_component_guest()
         .call_process(&mut store, a, b)
         .await?;
     info!(a = a, b = b, result = result, "Executed process function");
