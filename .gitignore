@@ -7,7 +7,12 @@
 **/*.rs.bk
 
 /.venv
+**/*wasm
 
+# Ignore the python generated files
 /components/sub_py/__pycache__
 /components/sub_py/*.wasm
 /components/sub_py/wit_world
+
+# Ignore the C generated files
+/components/mul_c/wasm_component*

@@ -33,6 +33,8 @@
             pythonEnv
             rust
             vscode
+            wit-bindgen
+            wasm-tools
           ];
 
           # Shell hook to set up the Python environment
