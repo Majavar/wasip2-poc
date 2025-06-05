@@ -7,5 +7,5 @@ class WitWorld(wit_world.WitWorld):
         return "sub"
 
     def process(self, a: int, b: int) -> int:
-        host.log(f"Sub.process called with a={a}, b={b}")
+        host.log(f"Sub called with a={a}, b={b}")
         return a - b

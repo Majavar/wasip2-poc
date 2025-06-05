@@ -1,7 +1,7 @@
 #include "wasm_component.h"
 
 void exports_wasm_component_name(wasm_component_string_t *ret) {
-    wasm_component_string_set(ret, "mul_c");
+    wasm_component_string_set(ret, "mul");
 }
 
 char* int_to_str(int value, char* buffer) {
@@ -52,7 +52,7 @@ int32_t exports_wasm_component_process(int32_t a, int32_t b) {
     int_to_str(b, b_str);
 
     int pos = 0;
-    const char* prefix = "multiplying ";
+    const char* prefix = "Multiplying ";
     for (int i = 0; prefix[i]; i++) {
         message[pos++] = prefix[i];
     }

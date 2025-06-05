@@ -16,3 +16,7 @@
 
 # Ignore the C generated files
 /components/mul_c/wasm_component*
+
+# Ignore the C# generated files
+components/xor_cs/obj
+components/xor_cs/world.wit
