@@ -46,6 +46,14 @@ struct Cli {
     #[arg(short, long)]
     wasm_file: PathBuf,
 
+    /// First operand for the process function
+    #[arg()]
+    a: i32,
+
+    /// Second operand for the process function
+    #[arg()]
+    b: i32,
+
     /// Verbosity level (-v = info, -vv = debug, -vvv = trace)
     #[arg(short, action = clap::ArgAction::Count, default_value_t = 2)]
     verbose: u8,
@@ -105,12 +113,10 @@ async fn main() -> Result<()> {
     info!(component_name = %name, "Retrieved component name");
 
     // Call the process function with two integers
-    let a = 7;
-    let b = 35;
     let result = instance
-        .call_process(&mut store, a, b)
+        .call_process(&mut store, cli.a, cli.b)
         .await?;
-    info!(a = a, b = b, result = result, "Executed process function");
+    info!(a = cli.a, b = cli.b, result = result, "Executed process function");
 
     info!("WebAssembly host application completed successfully");
     Ok(())
